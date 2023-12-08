@@ -46,9 +46,9 @@ public class RestaurantDto {
                 .id(restaurantEntity.getId())
                 .nom(restaurantEntity.getNom())
                 .adresse(restaurantEntity.getAdresse())
-                .evaluations(restaurantEntity.getEvaluations().stream().map(evaluationEntity -> EvaluationDto.buildFromEntity(evaluationEntity)).toList())
-                .evaluation_finale(restaurantEntity.getEval_finale().stream().map(evaluationFinaleEntity -> EvaluationFinaleDto.buildFromEntity(evaluationFinaleEntity)).toList())
-                .tags(restaurantEntity.getTags().stream().map(tagEntity -> TagDto.buildFromEntity(tagEntity)).toList())
+                .evaluations(restaurantEntity.getEvaluations() != null ? restaurantEntity.getEvaluations().stream().map(evaluationEntity -> EvaluationDto.buildFromEntity(evaluationEntity)).toList(): null)
+                .evaluation_finale(restaurantEntity.getEval_finale() != null ? restaurantEntity.getEval_finale().stream().map(evaluationFinaleEntity -> EvaluationFinaleDto.buildFromEntity(evaluationFinaleEntity)).toList() : null)
+                .tags(restaurantEntity.getTags() != null ? restaurantEntity.getTags().stream().map(tagEntity -> TagDto.buildFromEntity(tagEntity)).toList() : null)
                 .build();
 
     }

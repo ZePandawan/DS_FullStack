@@ -38,15 +38,7 @@ public class RestaurantEntity {
     @OneToMany(mappedBy = "restaurant")
     private List<EvaluationFinaleEntity> eval_finale;
 
-    /*@ManyToMany
-    @JoinTable(
-            name = "restaurant_tag",
-            joinColumns = @JoinColumn(name = "restaurant_id"),
-            inverseJoinColumns = @JoinColumn(name = "tag_id")
-    )
-    private List<TagEntity> tags;
 
-     */
     @OneToMany(mappedBy = "restaurant")
     private List<TagEntity> tags;
 }
