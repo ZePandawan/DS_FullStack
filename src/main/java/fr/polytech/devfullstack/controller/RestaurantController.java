@@ -18,7 +18,7 @@ public class RestaurantController {
     private final RestaurantService restaurantService;
 
 
-    // Fonctionne
+
     @GetMapping("/restaurants")
     public List<RestaurantDto> getRestaurants(@RequestParam(value = "id", required = false) ArrayList<Integer> idsToFetch) {
         if (idsToFetch == null || idsToFetch.isEmpty()) {
@@ -28,20 +28,18 @@ public class RestaurantController {
         }
     }
 
-    // Fonctionne
+
     @GetMapping("/restaurants/{id}")
     public RestaurantDto getRestaurantById(@PathVariable Integer id) {
         return RestaurantDto.buildFromEntity(this.restaurantService.getRestaurantById(id));
     }
 
 
-    // A tester
     @GetMapping("/restaurants/{id}/cover")
     public String getRestaurantCoverById(@PathVariable Integer id) {
         return this.restaurantService.getCoverDownloadUrlIllustration(id);
     }
 
-    // A tester
     @PutMapping("/restaurants/{id}/cover")
     public String putRestaurantCoverById(@PathVariable Integer id) {
         return this.restaurantService.putCoverDownloadUrlIllustration(id);
@@ -54,9 +52,6 @@ public class RestaurantController {
     }
 
 
-
-
-    // Fonctionne
     @DeleteMapping("/restaurants/{id}")
     public void deleteRestaurant(@PathVariable Integer id) {
         this.restaurantService.deleteRestaurant(id);
