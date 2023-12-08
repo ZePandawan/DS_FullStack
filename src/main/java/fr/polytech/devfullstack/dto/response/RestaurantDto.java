@@ -29,8 +29,11 @@ public class RestaurantDto {
     @JsonProperty("evaluations")
     private List<EvaluationDto> evaluations;
 
+    // Pas nécessaire
+    /*
     @JsonProperty("moyenne_eval")
     private double moyenne_eval;
+     */
 
     @JsonProperty("evaluation_finale")
     private List<EvaluationFinaleDto> evaluation_finale;
@@ -43,7 +46,6 @@ public class RestaurantDto {
                 .id(restaurantEntity.getId())
                 .nom(restaurantEntity.getNom())
                 .adresse(restaurantEntity.getAdresse())
-                .moyenne_eval(restaurantEntity.getMoyenne())
                 .evaluations(restaurantEntity.getEvaluations().stream().map(evaluationEntity -> EvaluationDto.buildFromEntity(evaluationEntity)).toList())
                 .evaluation_finale(restaurantEntity.getEval_finale().stream().map(evaluationFinaleEntity -> EvaluationFinaleDto.buildFromEntity(evaluationFinaleEntity)).toList())
                 .tags(restaurantEntity.getTags().stream().map(tagEntity -> TagDto.buildFromEntity(tagEntity)).toList())

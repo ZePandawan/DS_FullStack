@@ -47,13 +47,13 @@ public class RestaurantController {
         return this.restaurantService.putCoverDownloadUrlIllustration(id);
     }
 
-    /*
+
     @PostMapping("/restaurants")
     public RestaurantDto addRestaurant(@Valid @RequestBody RestaurantDto restaurantDto) {
         return RestaurantDto.buildFromEntity(this.restaurantService.addRestaurant(restaurantDto));
     }
 
-     */
+
 
 
     // Fonctionne

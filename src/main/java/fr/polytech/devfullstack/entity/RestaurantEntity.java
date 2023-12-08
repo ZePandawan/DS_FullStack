@@ -29,17 +29,24 @@ public class RestaurantEntity {
     @OneToMany(mappedBy = "restaurant")
     private List<EvaluationEntity> evaluations;
 
+    // Pas forcemment nécessaire
+    /*
     @Column(name = "moyenne", columnDefinition = "DOUBLE", nullable = false)
     private double moyenne;
+     */
 
     @OneToMany(mappedBy = "restaurant")
     private List<EvaluationFinaleEntity> eval_finale;
 
-    @ManyToMany
+    /*@ManyToMany
     @JoinTable(
             name = "restaurant_tag",
             joinColumns = @JoinColumn(name = "restaurant_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
+    private List<TagEntity> tags;
+
+     */
+    @OneToMany(mappedBy = "restaurant")
     private List<TagEntity> tags;
 }

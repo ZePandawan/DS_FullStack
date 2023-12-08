@@ -42,10 +42,6 @@ public class EvaluationDto {
     @JsonProperty("date_mise_a_jour")
     private Date date_mise_a_jour;
 
-    @JsonProperty("photos")
-    private List<String> photos;
-
-
     public static EvaluationDto buildFromEntity(EvaluationEntity evaluationEntity){
         return EvaluationDto.builder()
                 .id(evaluationEntity.getId())

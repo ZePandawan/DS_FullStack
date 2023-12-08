@@ -2,7 +2,9 @@ package fr.polytech.devfullstack.service;
 
 
 import fr.polytech.devfullstack.dto.response.RestaurantDto;
+import fr.polytech.devfullstack.dto.response.TagDto;
 import fr.polytech.devfullstack.entity.RestaurantEntity;
+import fr.polytech.devfullstack.entity.TagEntity;
 import fr.polytech.devfullstack.exception.*;
 import fr.polytech.devfullstack.repository.RestaurantRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,6 +43,16 @@ public class RestaurantService {
     }
 
      */
+
+
+    public RestaurantEntity addRestaurant(final RestaurantDto restaurantDto) {
+        final RestaurantEntity restaurantToInsert = RestaurantEntity.builder()
+                .nom(restaurantDto.getNom())
+                .adresse(restaurantDto.getAdresse())
+                .build();
+
+        return this.restaurantRepository.save(restaurantToInsert);
+    }
 
     public void deleteRestaurant(final Integer id) {
         this.restaurantRepository.deleteById(id);

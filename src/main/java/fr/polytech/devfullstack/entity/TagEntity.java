@@ -24,6 +24,7 @@ public class TagEntity {
 
     // Relation avec la classe RestaurantEntity
 
-    @ManyToMany(mappedBy = "tags")
-    private List<RestaurantEntity> restaurants;
+    @ManyToOne
+    @JoinColumn(name = "restaurant")
+    private RestaurantEntity restaurant;
 }
